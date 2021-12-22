@@ -18,10 +18,9 @@ download file and unpack it to your root webserver directory example:
 	include_once( @dirname(__FILE__).'/enigma/firewall.php' );
 	
 
-/**
- * Your web apps scripts index.php
- * PS this script is blocking only some IPs and you can code your custom ips to block very easy
- */
+ after upper code here are your web apps scripts index.php
+PS this script is blocking only some IPs and you can code your custom ips to block very easy undesidered networks to access your web app based on php/SQL 
+
 
 When you will unzip the program the mail directory and log files will be in /enigma/ directory of your vHost or php based web app
 All settings you can change in firewall.php file, put your allow ips ecc.....
