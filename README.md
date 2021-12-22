@@ -22,3 +22,18 @@ if ( is_file( @dirname(__FILE__).'/enigma/firewall.php' ) )
 When you will unzip the program the mail directory and log files will be in /enigma/ directory of your vHost or php based web app
 All settings you can change in firewall.php file, put your allow ips ecc.....
 
+For configure Allow ips you set up this in sample firewall.php file from line 37 to 46:
+
+/** IPS PROTECTED  Allow ips for deny you put return code deny!!! */
+if ( count( $IP_ALLOW ) > 0 ) {
+	if ( in_array( $_SERVER['REMOTE_ADDR'], $IP_ALLOW ) ) return;
+}
+if ( $_SERVER["REMOTE_ADDR"] == '192.168.0.1' ) {
+ 	return 'ALLOW'; 
+ }
+$ip_array = array( '89.212.137.96' , '93.103.113.142' , '192.168.0.2' , '192.168.0.3' , '192.168.0.4' , '89.212.204.88' , '8.23.224.107' , '8.23.224.50' , '69.65.5.119' , '89.212.204.85' );
+if ( in_array( $_SERVER["REMOTE_ADDR"], $ip_array ) ) {
+return 'ALLOW'; 
+}
+/** END IPS PROTECTED */
+
