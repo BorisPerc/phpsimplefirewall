@@ -7,7 +7,8 @@ download file and unpack it to your root webserver directory example:
 
 /home/www/htdocs/index.php   or    /var/www/html/index.php   ecc... upload from your FTP server to domain or subdomain of your web app this simple script and activate it by puting in index.php file of your webapp this directives:
 
-<?php 
+<  ?    php 
+
 define('PHP_FIREWALL_REQUEST_URI', strip_tags( $_SERVER['REQUEST_URI'] ) );
 define('PHP_FIREWALL_ACTIVATION', true );
 if ( is_file( @dirname(__FILE__).'/enigma/firewall.php' ) )
