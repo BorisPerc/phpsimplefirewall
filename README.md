@@ -10,9 +10,13 @@ download file and unpack it to your root webserver directory example:
 <  ?    php 
 
 define('PHP_FIREWALL_REQUEST_URI', strip_tags( $_SERVER['REQUEST_URI'] ) );
+
 define('PHP_FIREWALL_ACTIVATION', true );
+
 if ( is_file( @dirname(__FILE__).'/enigma/firewall.php' ) )
+
 	include_once( @dirname(__FILE__).'/enigma/firewall.php' );
+	
 
 /**
  * Your web apps scripts index.php
@@ -25,15 +29,20 @@ All settings you can change in firewall.php file, put your allow ips ecc.....
 For configure Allow ips you set up this in sample firewall.php file from line 37 to 46:
 
 /** IPS PROTECTED  Allow ips for deny you put return code deny!!! */
+
 if ( count( $IP_ALLOW ) > 0 ) {
 	if ( in_array( $_SERVER['REMOTE_ADDR'], $IP_ALLOW ) ) return;
 }
+
 if ( $_SERVER["REMOTE_ADDR"] == '192.168.0.1' ) {
  	return 'ALLOW'; 
  }
-$ip_array = array( '89.212.137.96' , '93.103.113.142' , '192.168.0.2' , '192.168.0.3' , '192.168.0.4' , '89.212.204.88' , '8.23.224.107' , '8.23.224.50' , '69.65.5.119' , '89.212.204.85' );
+ 
+$ip_array = array( '1.1.1.1' , '1.0.0.1' , '8.8.8.8' , '8.8.4.4' , '1.2.3.4' , '5.6.7.8' , '12.34.56.78' );
+
 if ( in_array( $_SERVER["REMOTE_ADDR"], $ip_array ) ) {
 return 'ALLOW'; 
 }
+
 /** END IPS PROTECTED */
 
