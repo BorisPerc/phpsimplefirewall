@@ -44,3 +44,10 @@ For configure Allow ips you set up this in sample firewall.php file from line 37
 
 /** END IPS PROTECTED */
 
+
+PS: Do not forget to change permition to 777 for logs file in directory /enigma/ if you don`t do this log file will not be able to write blocked ips!!!
+
+instructions are in readme simple php firewall.txt = enigmaphpfw.zip
+
+
+
